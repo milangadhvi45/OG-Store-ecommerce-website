@@ -1,0 +1,236 @@
+<!--contact.html file-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+                 color: rgb(102, 183, 181);
+
+        }
+
+        .info-item div h4 {
+            color: #2c3e50;
+            margin-bottom: 0.3rem;
+        }
+
+        .info-item div p {
+            color: #7f8c8d;
+            margin: 0;
+        }
+
+        .contact-form h3 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: rgb(127, 255, 212);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background-image: linear-gradient( rgb(127, 255, 212), blue);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: rgb(100, 220, 180);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(127, 255, 212, 0.4);
+        }
+
+          @media (max-width: 968px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section id="sectionnav">
+          
+      <nav id="navbar">
+  <h1 id="mainheading">OG Store</h1>
+    <!-- Use a <ul> for the list of navigation items -->
+    <ul id="navdetail">
+      <li><a href="index.html"><i class="bi bi-house-fill"></i></a></li>
+      <li><a href="contact.html"><i class="bi bi-telephone-fill"></i></a></li>
+      <li><a href="about.html"><i class="bi bi-info-circle-fill"></i></a></li>
+
+      <!-- The cart is now also an <li>, just like the others -->
+      <li id="cart" style="justify-items: end;color: whitesmoke;">
+        <a id="alink" href="addcart.html">
+          <!-- You can use an <img> or an icon font, both work -->
+          <i class="bi bi-bag-fill"></i> 
+          <div id="cartquantity">3</div>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</section>
+  <!-- Contact Us Page -->
+   <div class="page-container">
+     
+    
+    <div class="contact-container">
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+                <p>Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+
+                <div class="info-item">
+                    <i class="bi bi-envelope-fill"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>support@ogstore.com</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="bi bi-telephone-fill"></i>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>+91 98765 43210</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="bi bi-whatsapp"></i>
+                    <div>
+                        <h4>WhatsApp</h4>
+                        <p>+91 98765 43210</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <div>
+                        <h4>Address</h4>
+                        <p>OnceTry Design Pvt., Ivaan Sky ,Outer Ring Road, Ahmedabad 382350,Gujrat , India</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="bi bi-clock-fill"></i>
+                    <div>
+                        <h4>Business Hours</h4>
+                        <p>Mon - Sat: 10 AM - 8 PM<br>Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h3>Send Message</h3>
+                <form>
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="Enter your phone number">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea placeholder="Write your message here..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>  
+</body>
+<script src="showcart.js"></script>
+<script src="JavaScript/nav.js"></script>
+</html>  

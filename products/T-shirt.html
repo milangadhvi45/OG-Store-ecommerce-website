@@ -1,0 +1,312 @@
+<!--T-shirt.html file-->
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+  <body style="margin: 0;padding: 0;">
+
+   
+<section id="sectionnav" >       
+  <nav id="navbar">
+    <h1 id="mainheading">OG Store</h1>
+       <!-- Use a <ul> for the list of navigation items -->
+      <ul id="navdetail">
+        <li><a href="/index.html"><i class="bi bi-house-fill"></i></a></li>
+          <!-- The cart is now also an <li>, just like the others -->
+        <li id="cart">
+         <a id="alink" href="/addcart.html">
+          <!-- You can use an <img> or an icon font, both work -->
+           <i class="bi bi-bag-fill"></i> 
+           <div id="cartquantity">3</div>
+         </a>
+      </li>
+    </ul>
+  </nav>
+</section>
+
+<h2 id="h2headingforMore">OG T-Shirts</h2>
+
+<main id="productlistview">
+<section id="container">
+  <div id="ProductContainer"></div>
+</section>
+</main>
+
+<main id="productdetailview">
+  <div id="productdetailcontent"></div>
+
+</main>
+
+<template id="producttemplate">
+    <div id="card">
+      <article class="information [card]">
+              <span id="category"></span>
+
+                <div id="imgcontainer">
+                    <img id="productimg" src="" alt="">
+                </div>
+                <h2 id="productname"></h2>
+
+              <h6 id="productDescription"></h6>
+
+          <div  id="pricecontainer">
+            <p id="productprice"></p>
+
+           <div id="ratingdiv">
+
+           </div>
+
+            <p id="productactualprice"></p>
+          </div>
+               <p id="fullproductStock"></p>
+
+     
+      </article>
+   </div>
+     </template>
+
+     
+<template id="fullproducttemplate">
+       <div id="card">
+   <button id="back" onclick="showlistview()"><img src="/img/backimage.jpg" alt="" id="backimage" ></button>
+  <div id="forflex">
+
+    <div>
+              <span id="category"></span>
+          <div id="fullimgcontainer"> <img id="fullproductimg" src="" alt="">    </div>
+               
+    </div>
+
+    <div>
+          <h2 id="fullproductname"></h2>
+
+                <h4 id="fullproductDescription"></h4>
+
+          <div  id="fullpricecontainer">
+            <p id="fullproductprice"></p>
+            <del><p id="fullproductactualprice"></p>       </del>
+
+          </div>
+          <div id="productStockElement">
+            <p id="productPropertytotal">Total stock Available:</p>
+            <p id="productStock"></p>
+          </div>
+
+          <div id="productQuantityElement">
+            <p id="productquantity">Quantity(pecise):</p>
+            <div id="stockElement">
+            
+              <button id="cartDencrement">
+               <i class="bi bi-dash-lg"></i>
+              </button>
+
+              <p id="fullproductStock">1</p>
+              
+              <button id="cartIncrement">
+<i class="bi bi-plus-lg"></i>
+              </button>
+
+            </div>
+       </div>
+           <button class="addtocart">
+              Add To Cart<i class="bi bi-cart-plus" style="margin-left: 1rem;"></i>
+            </button>
+
+       </div>
+
+            </div>
+</div>
+     </template>
+
+
+<script src="/JavaScript/showcart.js"></script>
+
+<script>
+
+    
+let productlistview = document.getElementById('productlistview')
+let productdetailview = document.getElementById('productdetailview')
+let productdetailcontent = document.getElementById('productdetailcontent')
+let backtoproducts = document.getElementById('back-to-products')
+
+function showlistview(){
+  productlistview.style.display = 'flex';
+  productdetailview.style.display = 'none';
+  sectionnav.style.display = 'flex';
+  h2headingforMore.style.display = 'flex';
+}
+
+function showdetailsview(){
+ productlistview.style.display = 'none';
+  productdetailview.style.display = 'flex';
+  sectionnav.style.display = 'none';
+  h2headingforMore.style.display = 'none';
+
+}
+
+let allproducts = JSON.parse(localStorage.getItem('allproducts')) || [];
+
+let lsproducts = JSON.parse(localStorage.getItem('lsproducts')) || []
+
+    let productTemplate = document.getElementById('producttemplate')
+    let ProductContainer = document.getElementById('ProductContainer')
+
+      ProductContainer.addEventListener('click' , (event) => {
+        let clickedCard = event.target.closest('[id^="card-"]');
+        if(clickedCard){
+          let  productid = clickedCard.id.replace('card-', '');
+
+            let productData = allproducts.find(p => p.id == productid);
+            if (productData) {
+            showProductDetail(productData);
+           }
+        }
+})
+    let cartquantity = document.getElementById('cartquantity');
+
+
+      const updatecartcount = () => {
+        cartquantity.textContent = lsproducts.length
+      }
+
+updatecartcount()
+
+   function savecart(){
+    localStorage.setItem('lsproducts' , JSON.stringify(lsproducts));
+   }
+
+      let showProductDetail = (curprod) => {
+      let  {image , name , description , price , stock , category , id} = curprod
+        let fullProductTemplate = document.getElementById('fullproducttemplate');
+        let productDetailClone = document.importNode(fullProductTemplate.content , true);
+
+     productDetailClone.querySelector('[id="card"]').id = `card-${id.value}`
+     productDetailClone.querySelector('#category').textContent = category.value;
+     
+    productDetailClone.querySelector('#fullproductimg').src = image;
+    productDetailClone.querySelector('#fullproductname').textContent = name;
+    productDetailClone.querySelector('#fullproductDescription').textContent = description;
+    productDetailClone.querySelector('#fullproductprice').textContent = `₹${Number(price)}`;
+    productDetailClone.querySelector('#fullproductactualprice').textContent = `₹${Number(price) * 2}`;
+
+    productDetailClone.querySelector('#productStock').textContent = stock;
+
+   let quantityelement = productDetailClone.getElementById('fullproductStock');
+   quantityelement.textContent = 1;
+   productDetailClone.getElementById('cartDencrement').addEventListener('click', () => {
+   
+    let quantity = quantityelement.textContent;
+    if (quantity > 1) {
+      quantity--;
+    }
+    quantityelement.innerHTML = quantity
+    
+  })
+
+  productDetailClone.getElementById('cartIncrement').addEventListener('click', () => {
+    let quantity = quantityelement.textContent;
+    if (quantity < stock) {
+      quantity++;
+    }
+    quantityelement.innerHTML = quantity;
+  })
+    
+   productDetailClone.querySelector('.addtocart').addEventListener('click', () => {
+       let quantitytoadd = parseInt(quantityelement.textContent);
+
+         let existingproduct = lsproducts.find(p => p.id === id);
+
+       if (existingproduct) {
+      existingproduct.quantity += quantitytoadd;
+         
+         existingproduct.totalprice = existingproduct.quantity * price;
+      
+      }
+   
+   else{
+
+    const cartitem = {
+       id : id,
+       name : name,
+       quantity : quantitytoadd,
+       unitprice : price,
+       totalprice : quantitytoadd * price
+    }
+
+    lsproducts.push(cartitem);
+   }
+   savecart()
+   updatecartcount()
+   })
+ 
+       productdetailcontent.innerHTML = '';
+    productdetailcontent.appendChild(productDetailClone);
+
+    updatecartcount()
+    
+
+    showdetailsview()
+    }
+
+    
+async function fetchdata() {
+    let response = await fetch('../alljson.json');
+    let convert = await response.json();
+
+    localStorage.setItem('allproducts', JSON.stringify(allproducts));
+
+    allproducts = convert;
+
+    let shirtsToShow = allproducts.filter(product => product.category === 'tshirt')
+
+
+//    let homePageProducts = [...shirtsToShow , ...tshirtsToShow , ...asrisToShow , ...pentsToShow , ...capsToShow]
+
+    console.log(allproducts);
+    showproducts(shirtsToShow);
+}
+fetchdata();
+
+
+function showproducts(products){
+      if (!products) {
+        return 'nathi';
+      }
+
+      products.forEach((curElem) => {
+        let  {id , name , image ,description , category , price} = curElem
+        let productclone = document.importNode(productTemplate.content , true);
+        
+        productclone.querySelector('[id="card"]').id = `card-${id}`
+
+        productclone.querySelector('#productimg').src = image;
+        productclone.querySelector('#productname').textContent = name;
+        productclone.querySelector('#productDescription').textContent = description;
+        productclone.querySelector('#category').textContent = category;
+        productclone.querySelector('#productprice').textContent = `₹${price}`;
+        productclone.querySelector('#productactualprice').textContent = `₹${price * 2}`; // Example
+        
+        ProductContainer.appendChild(productclone);
+
+        updatecartcount()
+})
+}
+backtoproducts.addEventListener('click', () => {
+  showlistview();
+})
+
+showlistview()
+
+function svae(){
+localStorage.setItem('allproducts' ,JSON.stringify(allproducts));
+}
+svae()
+
+</script>
+    
+</body>
+</html>

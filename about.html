@@ -1,0 +1,211 @@
+<!--about.html file-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+          .about-hero {
+            margin-top: 2rem;
+            background-color:  rgb(102, 185, 186);;
+            padding: 4rem 3rem;
+            border-radius: 8px;
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .about-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .about-content h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .about-content h2 i {
+            color:  rgb(102, 185, 186);;
+        }
+
+        .about-content p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(127, 255, 212, 0.3);
+        }
+
+        .feature-card i {
+            font-size: 3rem;
+            color:  rgb(102, 185, 186);;
+            
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: #2c3e50;
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-card p {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        @media (max-width: 968px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <section id="sectionnav">
+          
+      <nav id="navbar">
+  <h1 id="mainheading">OG Store</h1>
+    <!-- Use a <ul> for the list of navigation items -->
+    <ul id="navdetail">
+      <li><a href="index.html"><i class="bi bi-house-fill"></i></a></li>
+      <li><a href="contact.html"><i class="bi bi-telephone-fill"></i></a></li>
+      <li><a href="about.html"><i class="bi bi-info-circle-fill"></i></a></li>
+
+      <!-- The cart is now also an <li>, just like the others -->
+      <li id="cart" style="justify-items: end;color: whitesmoke;">
+        <a id="alink" href="addcart.html">
+          <!-- You can use an <img> or an icon font, both work -->
+          <i class="bi bi-bag-fill"></i> 
+          <div id="cartquantity">3</div>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</section>
+
+    <div id="about-page" class="page-container page-section active">
+        <div class="about-hero">
+            <h1>About OG Store</h1>
+            <p>Your one-stop destination for premium fashion. We bring style, quality, and affordability together.</p>
+        </div>
+
+        <div class="about-content">
+            <h2><i class="bi bi-info-circle-fill"></i> Our Story</h2>
+            <p>Founded in 2024, OG Store started with a simple mission: to make premium fashion accessible to everyone. What began as a small online shop has grown into a trusted brand serving thousands of happy customers across India.</p>
+            <p>We believe that great style shouldn't break the bank. That's why we carefully curate our collection to offer the best products at prices that make sense.</p>
+        </div>
+
+        <div class="about-content">
+            <h2><i class="bi bi-bullseye"></i> Our Mission</h2>
+            <p>To provide high-quality, trendy fashion products that empower our customers to express their unique style with confidence.</p>
+        </div>
+
+        <div class="about-content">
+            <h2><i class="bi bi-star-fill"></i> Why Choose Us?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="bi bi-gem"></i>
+                    <h3>Premium Quality</h3>
+                    <p>Every product is carefully selected to meet our high standards</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="bi bi-truck"></i>
+                    <h3>Fast Delivery</h3>
+                    <p>Quick and reliable shipping to your doorstep</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="bi bi-arrow-repeat"></i>
+                    <h3>Easy Returns</h3>
+                    <p>Hassle-free 7-day return policy</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="bi bi-shield-check"></i>
+                    <h3>Secure Payment</h3>
+                    <p>100% safe and secure transactions</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="bi bi-chat-dots"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Always here to help you</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="bi bi-percent"></i>
+                    <h3>Best Prices</h3>
+                    <p>Competitive prices on all products</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-content">
+            <h2><i class="bi bi-bag-check-fill"></i> What We Offer</h2>
+            <p><strong>Men's Fashion:</strong> T-Shirts, Shirts, Jeans, Pants, Caps, Shoes & Accessories</p>
+            <p><strong>Women's Fashion:</strong> Tops, Dresses, Jeans, Accessories & More</p>
+            <p><strong>Accessories:</strong> Watches, Belts, Bags, Sunglasses & More</p>
+        </div>
+    </div>
+  <!-- About Us Page end -->
+   
+</body>
+<script src="showcart.js"></script>
+<script src="JavaScript/nav.js"></script>
+
+</html>
+  

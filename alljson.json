@@ -1,0 +1,222 @@
+
+[
+   {
+    "id":1,
+    "category":"caps",
+    "name":"Jack & Jonce",
+    "price":499.00,
+    "stock":100,
+    "description":"Jack & Jonce jense Cap",
+    "image":"/img/cap3.jpeg"
+    },
+
+      {
+    "id":2,
+    "category":"caps",
+    "name":"U.S.POLO Cap",
+    "price":399.00,
+    "stock":100,
+    "description":"Blue and gray U.S.POLO Assan summer Cap",
+    "image":"/img/cap2.jpeg"
+    },
+     {
+    "id":3,
+    "category":"caps",
+    "name":"Adidas Cap",
+    "price":299.00,
+    "stock":50,
+    "description":"Adidas sport cap black and white",
+    "image":"/img/cap1.jpeg"
+    },
+     {
+    "id":4,
+    "category":"caps",
+    "name":"F1 CAP",
+    "price":299.00,
+    "stock":150,
+    "description":"F1 Sport CAP Cotten",
+    "image":"/img/cap4.jpeg"
+    },    
+    {
+    "id":5,
+    "category":"pents",
+    "name":"Creame Cotten Pents",
+    "price":699.00,
+    "stock":50,
+    "description":"Cotten light creme color pent 4 pocets",
+    "image":"/img/pant1.jpeg"
+    },
+     {
+    "id":6,
+    "category":"pents",
+    "name":"Cotten pents",
+    "price":599.00,
+    "stock":100,
+    "description":"Cotten black color  pent with  4 pocets",
+    "image":"/img/pant2.jpeg"
+    },
+     {
+    "id":7,
+    "category":"pents",
+    "name":"Black jeanse",
+    "price":699.00,
+    "stock":50,
+    "description":"Black jeanse blue buddha brand",
+    "image":"/img/pant3.jpeg"
+    },
+     {
+    "id":8,
+    "category":"pents",
+    "name":"Strait Jeans",
+    "price":899.00,
+    "stock":150,
+    "description":"Sport black half sleev Disign T-shirt",
+    "image":"/img/pant4.jpeg"
+    },    
+    {
+    "id":9,
+    "category":"shirt",
+    "name":"Maroonshirt",
+    "price":500.00,
+    "stock":50,
+    "description":"kotten maroon full sleev colure lining shirt",
+    "image":"/img/shirt1.jpeg"
+    },
+     {
+    "id":10,
+    "category":"shirt",
+    "name":"Garyshirt",
+    "price":700.00,
+    "stock":100,
+    "description":"kotten gray full sleev  lining shirt",
+    "image":"/img/shirt2.jpeg"
+    },
+     {
+    "id":11,
+    "category":"shirt",
+    "name":"blackshirt",
+    "price":500.00,
+    "stock":50,
+    "description":"kotten black full sleev colure lining shirt",
+    "image":"/img/shirt3.jpeg"
+    },
+     {
+    "id":12,
+    "category":"shirt",
+    "name":"kreamshirt",
+    "price":999.00,
+    "stock":150,
+    "description":"kotten cream full sleev colure lining shirt",
+    "image":"/img/shirt4.jpeg"
+    },
+ 
+    {
+    "id":13,
+    "category":"tshirt",
+    "name":"Creame T-shirt",
+    "price":799.00,
+    "stock":50,
+    "description":"cofe-white half sleev  with colure t-shirt",
+    "image":"/img/tshirt1.jpeg"
+    },
+     {
+    "id":14,
+    "category":"tshirt",
+    "name":"White Tshirt",
+    "price":599.00,
+    "stock":100,
+    "description":"white kotten half sleev  with black button t-shirt",
+    "image":"/img/tshirt2.jpeg"
+    },
+     {
+    "id":15,
+    "category":"tshirt",
+    "name":"Lineng T-shirt",
+    "price":499.00,
+    "stock":50,
+    "description":"Women Striped Oversized Fit Round-Neck T-Shirt",
+    "image":"/img/tshirt3.jpeg"
+    },
+     {
+    "id":16,
+    "category":"tshirt",
+    "name":"HRX Sport",
+    "price":499.00,
+    "stock":150,
+    "description":"Sport black half sleev T-shirt by HRX",
+    "image":"/img/tshirt4.jpeg"
+    }, 
+    {
+      "id":17,
+      "category":"shoes",
+      "name":"Redtape Smooth",
+      "price":699.00,
+      "stock":200,
+      "description":"Man Athelesior Shoes,creme ,Decent comfert",
+      "image":"/img/shoes1.png"
+    }
+      ,
+     {
+      "id":18,
+      "category":"shoes",
+      "name":"Radetape Hulk",
+      "price":899.00,
+      "stock":150,
+      "description":"Men Low-Top Running Shoes with Lace Fastening",
+      "image":"/img/shoes3.png"
+    },
+        {
+      "id":19,
+      "category":"shoes",
+      "name":"Nike AIR",
+      "price":999.00,
+      "stock":100,
+      "description":"DoenShifting 13 Running Shoes, Gray Sprt Shoes",
+      "image":"/img/shoes2.jpeg"
+    },
+    {
+      "id":20,
+      "category":"shoes",
+      "name":"Asics",
+      "price":999.00,
+      "stock":170,
+      "description":"Men SPEED MENACE FF Synthetic Leather Cricket Shoes",
+      "image":"/img/shoes4.png"
+    },
+    {
+      "id":21,
+      "category":"accesories",
+      "name":"Black Chain",
+      "price":499,
+      "stock":50,
+      "description":"Black metel chain thik and  classy",
+      "image":"/img/ass4.jpeg"
+    },
+     {
+      "id":22,
+      "category":"accesories",
+      "name":"Lether Purse",
+      "price":299,
+      "stock":100,
+      "description":"Lether Brown Purse For Men",
+      "image":"/img/ass3.jpeg"
+    },
+    {
+      "id":23,
+      "category":"accesories",
+      "name":"AX Belt",
+      "price":999,
+      "stock":100,
+      "description":"Armani Exchenge Lether Belt Lether",
+      "image":"/img/ass2.jpeg"
+    },
+        {
+      "id":24,
+      "category":"accesories",
+      "name":"Accerios Combo",
+      "price":799,
+      "stock":100,
+      "description":"Accessris Combo",
+      "image":"/img/asris1.jpeg"
+    }
+]

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body> <h1>Movie Finder</h1>
+
+    <!-- Step 1: Create the search form -->
+    <form id="search-form">
+        <input type="text" id="search-input" placeholder="Search for a movie..." required>
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Step 2: Create a container for the results -->
+    <main id="results-container"></main>
+    <ul id="ul"></ul>
+
+
+    <script>
+//'123abc456def789...';
+      const myacckey =  `eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3OTUyOWI5ODVhNWIzNmMxNTIzNjU0NzI2MDIyYTA3ZCIsIm5iZiI6MTc1NDQ1ODcyNy4xMzc5OTk4LCJzdWIiOiI2ODkyZWE2N2RjYTYzNjQ5MmE3ZDAyMWEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.n1_VwsGm1tklOq-_K2PoZ4VEXI-Pqk3aMHBnY8gXR1w`
+
+
+const searchForm = document.getElementById('search-form');
+const searchInput = document.getElementById('search-input');
+const resultsContainer = document.getElementById('results-container');
+
+const myApiKey = '79529b985a5b36c1523654726022a07d'; // This will be visible on GitHub!
+//serchmovie('pk');
+let currentmovie = [];
+
+async function serchmovie(query) {
+resultsContainer.innerHTML = `<p>Loding...</p>`
+    try {
+let forfetch = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${myApiKey}&query=${query}`)
+       console.log(forfetch);
+        
+   if (!forfetch.ok) {
+    throw new Error('network response was not ok');
+   }
+
+   const data = await forfetch.json();
+   //console.log("SUCCESS! Here is your movie data:")
+   currentmovie = data.results;
+   displayMovies(currentmovie);
+   console.log(data);
+   console.log(currentmovie);
+
+   
+   
+   
+    } catch (error) {
+        console.error('there e was a problem', error)
+        resultsContainer.innerHTML = `<p>could find movies .try again</p>`
+    }
+}
+//serchmovie(serchmovie());
+
+searchForm.addEventListener('submit', (event) => {
+    // Prevent the form from actually submitting and reloading the page
+    event.preventDefault(); 
+    
+    const query = searchInput.value;
+    console.log(query);
+    
+    if (query) {
+        serchmovie(query);
+    }
+});
+
+
+console.log(myApiKey);
+function displayMovies(movies) {
+    resultsContainer.innerHTML = '';
+
+    if (movies.length === 0) {
+        resultsContainer.innerHTML = '<p>No movies found for your search.</p>';
+        return;
+    }
+
+    // Loop through the movies array
+    movies.forEach(movie => {
+        // Create a div for each movie card
+        const movieCard = document.createElement('div');
+         movieCard.classList.add('moviecard');
+        movieCard.dataset.movieid = movie.id; // Add a class for CSS styling
+
+      
+        // ** IMPORTANT: Construct the full image URL **
+        // TMDb gives you a partial path. You must add the base URL.
+        const posterUrl = movie.poster_path
+            ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+            : 'https://via.placeholder.com/150x225?text=No+Image'; // A placeholder if no image exists
+
+        // Set the content of the movie card using innerHTML
+        movieCard.innerHTML = `
+            <img src="${posterUrl}" alt="${movie.title}">
+            <div class="movie-info">
+          <h3>${movie.title}</h3>
+
+                </div>
+        `;
+               // <span>Rating: ${movie.vote_average.toFixed(1)}</span>
+           
+        // Add the new movie card to the results container
+        resultsContainer.appendChild(movieCard);
+        
+    });
+}
+
+  resultsContainer.addEventListener('click', (event) => {
+           let clickcard = event.target.closest('.moviecard');
+
+     if (clickcard) {
+        let movieid =    clickcard.dataset.movieid; // Add a class for CSS styling
+     
+            const clickmovieobject = currentmovie.find((movie =>  movie.id == movieid));
+           
+          console.log(clickmovieobject);
+          console.log(movieid);
+          displaymore(movieid)
+
+
+
+
+     }
+           
+        })
+
+        function displaymore(formovie){
+            console.log('there is more');
+            let ul = document.getElementById('ul');
+         //const resultsContainer = document.getElementById('results-container');
+          let formore = document.createElement('div');
+          // formore.classList.add('formmore');
+
+           formore.innerHTML = `
+       <span>   rating: ${formovie.vote_average}</span>
+           `
+            console.log(formore);
+            console.log(formovie);
+            
+            
+           ul.appendChild(formore);
+        }
+//console.log(forfetch);
+
+
+</script>
+</body>
+</html>
+
+
+
+

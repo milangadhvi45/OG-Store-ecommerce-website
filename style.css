@@ -1,0 +1,740 @@
+/* style.css file containe all css code*/
+
+@font-face {
+  font-family: 'MyCoolFont';
+  src: url('fonts/My-Cool-Font-Bold.otf') format('truetype');
+  font-weight: 900; /* or 700 */
+  font-style:italic;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'MyCoolFont', sans-serif;
+    box-sizing: border-box;
+}
+/*navbar start*/
+#mainheading{
+padding-bottom: 25px;
+margin: 0;
+ background-color: rgb(102, 183, 181);
+  height: 3rem;
+    font-family: 'MyCoolFont', sans-serif;
+    font-size: 4rem;
+  font-weight: 900;
+  width: 100%;
+  color: white;
+
+  text-align: center;
+}
+
+
+#navbar {
+     background-color: rgb(102, 183, 181);
+      width: 100%;
+    box-shadow: 0 12px 10px  lightgray;
+    padding: 1rem 0; /* Add some padding for spacing */
+}
+
+
+/* Target the <ul> container */
+#navdetail {
+  display: flex;justify-content: center; gap: 5rem; /* Increased gap for better spacing */
+  
+  /* THIS IS THE KEY FIX: It vertically aligns all flex items to the center. */
+  align-items: center;
+
+  /* Reset default list styles */
+  list-style-type: none;
+  padding: 0; margin: 0;
+}
+/* Style the links directly */
+#navdetail a {
+      background-color: rgb(102, 183, 181);
+      color: whitesmoke;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  text-decoration: none; font-size: 1.2rem;
+}
+
+/* Style for the link of the CURRENT page */
+#navdetail a.active {
+  font-weight: bold;
+  color: rgb(41, 136, 135);
+}
+
+/* Optional: Keep the hover effect for other links */
+#navdetail a:not(.active):hover {
+color: rgb(148, 147, 147);
+}
+#cart {
+  /* The parent <li> needs to be relative for the badge positioning */
+  position: relative;
+  font-size: 2rem; /* Increase size of the cart icon */
+  bottom: 4px;/* NO MORE PADDING-TOP! The align-items property handles this now. */
+}
+
+
+#cartquantity {
+  color: black;
+  border-radius: 50%; /* Make it a perfect circle */
+  font-size: 0.6rem; /* Smaller font for the number */
+  position: absolute;
+
+  /* More robust positioning for the badge */
+  top: 18px;right: 7px;
+
+  /* Use padding and fixed size for a nice circular shape */
+}
+
+/*navvar end*/
+
+
+/*slider*/
+
+#sectionslider {
+    width: 800rem; /* Use a percentage for responsive width */
+    max-width: 1200px; /* Optional: prevent it from getting too large on big screens */
+    
+    /* This is the key property for the 2:1 ratio */
+    aspect-ratio: 2 / 1; 
+    margin-top: 3rem;
+    
+     align-self: center;
+    justify-self: center;
+
+
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the images within each slide
+    display: block;
+
+*/
+.swiper-slide img {
+    width: 1200px;
+    height: 100%;
+    object-fit: cover; /* This makes the image cover the entire slide without distortion */
+}
+/* Optional: Customize navigation button colors    */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #ffffff; /* White arrows */
+}
+
+/* Optional: Customize pagination bullet colors */
+.swiper-pagination-bullet-active {
+    background: #ffffff; /* White active bullet */
+}
+
+
+.swiper-wrapper{
+    width: 150rem;
+}
+
+/*sliderend*/
+
+
+/*main page card start*/
+
+#productimg{
+width: 15rem;height: 20rem;
+border-radius: 10px 10px 0px 0px ;
+transition: transform 0.3s ease;
+
+}
+#productimg:hover{
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(127, 255, 212, 0.3);
+            
+}
+
+#productDescription{
+    font-weight: 600;
+    margin: 0;
+}
+#productname{
+    font-size: 1.4rem; font-weight: bolder;
+    font-family: 'MyCoolFont', sans-serif;
+}
+#category{
+    display: none;
+}
+
+#producttemplate{
+display: grid; grid-template-columns: 30px 30px 30px 30px;
+ background-color: rgb(32, 206, 151);
+}
+#containerheading{
+    text-align: center;
+    font-size: 2.3rem;
+    font-weight: 1900;
+    margin-top: 5.5rem;
+    color: rgb(102, 183, 181);
+    font-family: 'MyCoolFont';
+}
+
+#ProductContainer
+{
+    display: grid;
+    gap: 2px; grid-template-columns: 20rem 20rem 20rem 20rem ;
+    font-size: 1.3rem; text-align:center;
+    width: 100%;
+    /* height: 32rem;
+    */border-radius: 8px;
+     align-self: center;
+    justify-self: center;
+    justify-content: center;
+}
+
+#productlistview{
+  align-self: center;
+    justify-self: center;
+    justify-content: center;
+}
+
+#productactualprice{
+    text-align: center; text-decoration: line-through;
+    padding: 0; margin: 0.5rem;    font-family: 'MyCoolFont', sans-serif;
+
+}
+#productprice{
+    margin: 0.5rem;font-family: 'MyCoolFont', sans-serif;     text-align: center;
+
+}
+/*main page card end*/
+
+
+/*product detail view for main page style*/
+
+#backimage{
+    width: 1.4rem;
+    height: 15px;
+    justify-self: flex-start;
+}
+#back{
+    background-color: transparent;
+    border: none;
+
+}
+#forflex{
+    display: flex;
+    gap: 5rem;
+    padding-left: 4.5cm;
+    padding-top: 0.6cm;
+    justify-content: center;
+
+}
+
+#fullproductimg{
+    width: 35rem;
+    height: 37.5rem;
+    border-radius: 8px;
+       transition: transform 0.15s ease, box-shadow 0.6s ease;
+    box-shadow: 0 10px 30px rgba(127, 255, 212, 0.4);
+    margin-top: 1.5rem;
+}
+
+#fullproductimg:hover{
+  
+ box-shadow:  2px 2px 15px 10px rgb(102, 183, 181), -2px -2px 15px  rgb(102, 183, 181) 
+ 
+  
+}
+
+#fullproductname{
+    font-size: 3rem;
+    font-family: 'MyCoolFont', sans-serif;
+}
+
+#fullproductprice{
+    font-size: 2rem;
+    display: flex;
+    font-family: 'MyCoolFont', sans-serif;
+    margin-bottom: 0;
+
+
+}
+
+#fullproductactualprice{
+    font-size: 1.3rem;
+    font-family: 'MyCoolFont', sans-serif;
+    margin-top: 0;
+}
+
+#productStockElement{
+    font-size: 1.5rem;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#stockElement , #productQuantityElement{
+    display: flex;
+}
+#productPropertytotal{
+    font-size: 1.5rem;
+    font-family: 'MyCoolFont';
+}
+
+#cartDencrement{
+    border-radius: 90%;
+    width: 2rem;
+    background-color: whitesmoke;
+    height: 2rem;
+    margin-top: 1.2rem;
+    margin: 1.2rem;
+}
+
+#cartDencrement:active{
+    background-color: rgb(154, 57, 57);
+}
+
+#fullproductStock{
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+#cartIncrement{
+    border-radius: 90%;
+    background-color: whitesmoke;
+    width: 2rem;
+    height: 2rem;
+    margin-top: 1.2rem;
+    margin: 1.2rem;
+}
+
+#cartIncrement:active{
+    background-color: lightgreen;
+}
+
+#fullproductDescription{
+    font-size: 1.5rem;
+}
+
+.addtocart{
+    font-size: 1.2rem;
+    font-family: 'MyCoolFont', sans-serif;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    border:4px solid rgb(102, 183, 181);
+     transition: transform 0.3s ease;
+
+}
+.addtocart:hover{
+ transform: scale(1.1);
+
+}
+
+.addtocart:active{
+    background-color: rgb(102, 183, 181);
+}
+
+#h2heading{
+    
+ text-align: center;
+    font-size: 2.3rem;
+    font-weight: 900;
+    margin-top: 4.5rem;
+    color: rgb(102, 183, 181);
+    font-family: 'MyCoolFont', sans-serif;
+}
+#h2headingformore{
+    font-family: 'MyCoolFont',serif;
+}
+
+#sectionMore{
+  text-align: center;
+  font-family: 'MyCoolFont', sans-serif;       
+}
+#morecard{
+    display: grid; grid-template-columns: 24.3rem 24.3rem 24.3rem;
+    gap: 2rem;
+    justify-content: center;
+}
+
+#moreimg{
+    width: 23rem;height: 23.5rem;
+    border-radius: 18px;
+    text-align:center;
+}
+
+#aboutlink{
+    text-decoration: none; color: #000;
+}
+/*section More end*/
+
+
+/*footer  section*/ 
+#footersection{
+    background-color: rgb(102, 185, 186);
+    width: 100%;  
+      height: 20rem;
+}
+#shoppingdiv{
+    display: grid;
+    font-family: 'MyCoolFont', sans-serif;
+}
+#Helplink{
+    text-decoration: none;
+    color: black;
+    display: grid;
+    font-size: 20px;
+    line-height: 2.2rem;
+    font-family: 'MyCoolFont', sans-serif;
+}
+
+
+ #Policylink{
+    text-decoration: none;
+    color: black;
+    display: grid;
+    font-size: 20px;
+    line-height: 2.2rem;
+    font-family: 'MyCoolFont', sans-serif;
+}
+
+#Helplink:last-child{
+  line-height: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+#Policylink:last-child{
+    line-height:1.2rem;
+  margin-top: 0.5rem;
+
+}
+
+#footerdiv{
+    display: flex;
+    gap:6rem;
+    font-family:'MyCoolFont', sans-serif;
+    justify-content: end;
+    margin: 2rem;
+    padding: 0rem 10rem 0rem 10rem;
+}
+
+#newspara{
+    font-size: 20px;
+    line-height: 1.9rem;
+}
+
+#emaininput{
+    width: 70%;
+    height: 1.5rem;
+    background-color: black;
+    border-bottom:6px solid whitesmoke;
+    font-size: 20px;
+    color: rgb(127, 255, 212);
+
+}
+
+#addres{
+    line-height: 1.9rem;
+    font-size: 17px;
+}
+/*footer section end*/
+
+/*shirt start*/
+#h2headingforMore{
+ justify-content: center;
+ text-align: center;
+    font-size: 2.3rem;
+    font-weight: 900;
+    color: rgb(102, 183, 181);
+    font-family: 'MyCoolFont', sans-serif;
+}
+
+#productquantity{
+    font-size: 1.4rem;
+}
+
+/* Cart Container */
+#cartcontainer {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+#cartempty{
+     color: rgb(102, 185, 186);
+     text-align: center;
+     font-size: 4rem;
+     font-family: 'MyCoolFont', sans-serif;
+
+}
+
+/* Cart Item Card */
+.cartclass {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 1.5rem 2rem;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.cartclass:hover {
+    box-shadow: 0 4px 20px rgba(127, 255, 212, 0.25);
+    transform: translateY(-3px);
+}
+
+/* Product Image Container - Row 1, Column 1 */
+#cartimgcontainer {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    width: 150px;
+    height: 150px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f8f8f8;
+}
+
+#cartproductimg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Product Info Section - Row 1, Column 2 */
+.cartclass > div:nth-child(2) {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Product Name */
+#cartproductname {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+}
+
+/* Product Description */
+#cartproductDescription {
+    font-size: 1rem;
+    color: #7f8c8d;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* Price Container - Row 1, Column 3 */
+#cartpricecontainer {
+    grid-row: 1 / 2;
+    grid-column: 3 / 4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.3rem;
+}
+
+#cartproductprice {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: rgb(127, 255, 212);
+    margin: 0;
+}
+
+#cartproductactualprice {
+    font-size: 1.1rem;
+    color: #95a5a6;
+    text-decoration: line-through;
+    margin: 0;
+}
+
+/* Quantity Element - Row 2, Column 3 (Right side) */
+#Quantityeelement {
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    justify-self: end;
+}
+
+.cartDencrement, 
+.cartIncrement {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid rgb(127, 255, 212);
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    color: rgb(127, 255, 212);
+}
+
+.cartDencrement:hover {
+    background: rgb(127, 255, 212);
+    border-color: rgb(127, 255, 212);
+    color: white;
+    transform: scale(1.15);
+}
+
+.cartIncrement:hover {
+    background: rgb(127, 255, 212);
+    border-color: rgb(127, 255, 212);
+    color: white;
+    transform: scale(1.15);
+}
+
+.cartDencrement:active {
+    transform: scale(0.95);
+}
+
+.cartIncrement:active {
+    transform: scale(0.95);
+}
+
+#cartproductStock {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    min-width: 40px;
+    text-align: center;
+    margin: 0;
+}
+
+/* Remove Button - Row 2, Column 1-2 (Left side) */
+.cartclass > div:last-child {
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+}
+
+.removetocart {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 10px;
+    font-family: 'MyCoolFont',serif;
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.removetocart:hover {
+    background: #ee5a52;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+}
+
+.removetocart:active {
+    transform: translateY(0);
+}
+
+/* Hide category if not needed */
+#category {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cartclass {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto auto;
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+    #cartimgcontainer {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Product info spans full width on mobile */
+    .cartclass > div:nth-child(2) {
+        grid-column: 2 / 3;
+    }
+
+    /* Price below product info */
+    #cartpricecontainer {
+        grid-row: 2 / 3;
+        grid-column: 1 / -1;
+        align-items: flex-start;
+    }
+
+    /* Quantity on third row */
+    #Quantityeelement {
+        grid-row: 3 / 4;
+        grid-column: 2 / 3;
+        justify-self: end;
+    }
+
+    /* Remove button on third row */
+    .cartclass > div:last-child {
+        grid-row: 3 / 4;
+        grid-column: 1 / 2;
+    }
+
+    #cartproductname {
+        font-size: 1.3rem;
+    }
+
+    #cartproductprice {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cartclass {
+        padding: 1rem;
+    }
+
+    #cartimgcontainer {
+        width: 80px;
+        height: 80px;
+    }
+
+    .cartDencrement, 
+    .cartIncrement {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+
+    #cartproductStock {
+        font-size: 1.2rem;
+    }
+
+    .removetocart {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Ensure proper section visibility */
+#productdetailview {
+    display: none; /* Hidden by default */
+}
+
+.sectionslider{
+    display: block;
+}
+#productlistview {
+    display: block; /* Visible by default */
+}
+
+
+
+
+       
+       
