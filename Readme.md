@@ -32,7 +32,7 @@ A modern, fully-functional e-commerce website built with HTML, CSS, and Vanilla 
 
 ### Shopping Cart
 
-![Cart](./img/cart.png)
+![Cart](./img/Cart.png)
 
 ## 🛠️ Technologies Used
 
