@@ -18,7 +18,7 @@ A modern, fully-functional e-commerce website built with HTML, CSS, and Vanilla 
 
 ## 🚀 Live Demo
 
-[View Live Demo](your-github-pages-link-here) _(Add after hosting)_
+[View Live Demo](https://milangadhvi45.github.io/OG-Store-ecommerce-website/)
 
 ## 📸 Screenshots
 
