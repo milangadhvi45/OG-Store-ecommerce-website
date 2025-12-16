@@ -88,7 +88,7 @@ og-store/
 2. **Open in browser**
 
    ```bash
-   # Simply open realmain.html in your browser
+   # Simply open index.html in your browser
    # Or use Live Server in VS Code
    ```
 
@@ -162,14 +162,10 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 👨‍💻 Author
 
-**Your Name**
+**MIlansinh Gadhvi**
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
+- GitHub: [milangadhvi45](https://github.com/milangadhvi45)
+- LinkedIn: [Milansinh Gadhvi](https://www.linkedin.com/in/milansinh-gadhvi-9a7607332?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
 
 ## 🙏 Acknowledgments
 
